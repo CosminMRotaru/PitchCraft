@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* === 1. BODY & BASE === */
+body {
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    background:
+        radial-gradient(ellipse 60% 40% at 10% 5%, rgba(104,78,255,0.22) 0%, transparent 90%),
+        radial-gradient(ellipse 40% 30% at 90% 90%, rgba(236,72,153,0.18) 0%, transparent 90%),
+        linear-gradient(180deg, #0a0a23 0%, #181629 100%);
+    color: #fff;
+}
+
+/* === 2. LAYOUT & CONTAINERS === */
+header {
+    width: 100%;
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 2.2rem 1.2rem 0.8rem;
+    box-sizing: border-box;
+}
+nav {
+    display: flex;
+    gap: 0.7rem;
+    align-items: center;
+}
+.output-grid {
+    column-count: 2;
+    column-gap: 2.4rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+    overflow: visible !important;
+    padding-top: 44px;
+}
+.output-grid > .card-sm-padding {
+    display: block;
+    width: 100%;
+    margin-bottom: 2.4rem;
+    break-inside: avoid;
+}
+.history-masonry {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.4rem;
+    margin-top: 2rem;
+    padding-top: 0.5rem;
+    width: 100%;
+    overflow: visible !important;
+}
+.history-masonry-card {
+    width: 100%;
+    display: block;
+    margin-bottom: 2.4rem;
+    background: #201a2d;
+    border-radius: 1.2rem;
+    border: 2px solid #007cff;
+    box-shadow: 0 2px 28px 0px #007cff44, 0 0 36px #ec489944;
+    padding: 2.2rem 2.2rem 1.2rem 2.2rem;
+    position: relative;
+    border-left: 10px solid #ec4899;
+    transition: box-shadow 0.22s, border-color 0.18s, transform 0.16s;
+    z-index: 1;
+}
+.history-cards-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    overflow: visible !important;
+}
+.history-masonry-meta {
+    font-size: 0.93rem;
+    color: #a2a2c3;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.03em;
+    opacity: 0.8;
+}
+
+/* === 3. BUTTONS, CARDS, FORMS === */
+.header-logo-icon {
+    display: flex;
+    align-items: center;
+    margin-right: 0.25rem;
+    font-size: 2.2rem;
+    filter: drop-shadow(0 2px 8px #6d4aff88);
+}
+.header-title {
+    font-size: 2.08rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: #fff;
+    margin-left: 0.1rem;
+}
+.btn {
+    background: linear-gradient(90deg, #ec4899 0%, #007cff 100%);
+    color: white;
+    font-weight: 600;
+    font-size: 1.08rem;
+    border-radius: 0.7rem;
+    border: none;
+    padding: 0.58rem 1.3rem;
+    box-shadow: 0 3px 16px 0px #007cff33, 0 0 8px #ec489966;
+    transition: box-shadow .22s, filter .15s, background .17s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+.btn-alt-bg {
+    background: linear-gradient(90deg,#6d4aff 0%,#ec4899 100%);
+}
+.btn:hover,
+.btn-alt-bg:hover {
+    box-shadow: 0 8px 22px #007cff66, 0 2px 8px #ec4899;
+    filter: brightness(1.08);
+}
+.card {
+    position: relative;
+    background: #181629;
+    border-radius: 1.3rem;
+    padding: 2rem 1.5rem;
+    color: #fff;
+    margin-bottom: 2rem;
+    border: 2px solid transparent;
+    background-image:
+      linear-gradient(#181629, #181629),
+      linear-gradient(90deg, #ec4899, #007cff);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    box-shadow: 0 0 0px 0 #ec4899, 0 0 0px #007cff;
+    transition: box-shadow 0.18s, background-image 0.2s;
+    z-index: 0;
+    overflow: visible;
+}
+.card:hover {
+    box-shadow: 0 0 32px 10px #ec489988, 0 0 36px 18px #007cff99;
+    background-image:
+      linear-gradient(#181629, #181629),
+      linear-gradient(90deg, #ff43b7, #36c2ff);
+}
+.card-content {
+    position: relative;
+    z-index: 1;
+}
+.title,
+.card-title {
+    display: flex;
+    align-items: center;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #fff;
+    gap: 0.5rem;
+}
+.card ul, .card-list {
+    margin: 0.7rem 0 0.7rem 1.2rem;
+    list-style: disc;
+}
+.card li, .card-list li {
+    margin-bottom: 0.3em;
+    line-height: 1.6;
+}
+.card-padding {
+    padding: 2rem 2rem;
+}
+.card-sm-padding {
+    padding: 1.1rem 0.6rem;
+}
+.card-gradient { display: none; }
+.input-border {
+    border: 1px solid #393e6d;
+    background: #181629;
+    color: #fff;
+    border-radius: 0.6rem;
+    font-size: 1rem;
+    padding: 0.65rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.input-border:focus {
+    outline: none;
+    border-color: #ec4899;
+    box-shadow: 0 0 8px #ec489922;
+}
+::placeholder {
+    color: #7c7caa;
+}
+
+/* === 4. ANIMATION & UTILITY === */
+.btn-gradient-pulse {
+    animation: pulse-btn 3.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+.btn:hover,
+.btn-gradient-pulse:hover,
+.btn-alt-bg:hover {
+    animation: pulse-btn 2.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    filter: brightness(1.07);
+}
+@keyframes pulse-btn {
+    0%, 100% { box-shadow: 0 0 0px 0 #ec4899, 0 0 0px 0 #007cff; }
+    45% { box-shadow: 0 0 6px 3px #ec489955, 0 0 12px 5px #007cff55; }
+    75% { box-shadow: 0 0 12px 6px #ec489944, 0 0 16px 8px #007cff44; }
+}
+.btn-gradient-loading {
+    pointer-events: none;
+    opacity: .82;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+.loader-spin {
+    display: block;
+    width: 32px;
+    height:32px;
+    border: 3px solid #fff;
+    border-top: 3px solid #ec4899;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto;
+}
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+.loading-anim-text {
+    display: inline-block;
+    animation: fade-in-text 0.7s;
+}
+@keyframes fade-in-text {
+    from { opacity: 0; transform: translateY(10px);}
+    to { opacity: 1; transform: none;}
+}
+.hero-btn-tooltip {
+    position: absolute;
+    left: 50%;
+    bottom: -2.2rem;
+    transform: translateX(-50%);
+    background: #232347;
+    color: #fff;
+    font-size: 0.96rem;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 2px 20px #23234788;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.23s;
+}
+.relative.inline-block:hover .hero-btn-tooltip {
+    opacity: 1;
+    pointer-events: auto;
+}
+.shake-anim {
+    animation: shake 0.38s cubic-bezier(.36,.07,.19,.97) both;
+}
+@keyframes shake {
+    10%, 90% { transform: translateX(-1px); }
+    20%, 80% { transform: translateX(2px); }
+    30%, 50%, 70% { transform: translateX(-4px); }
+    40%, 60% { transform: translateX(4px); }
+    100% { transform: none; }
+}
+.glow-title {
+    text-shadow: 0 2px 12px #007cff77, 0 0 8px #ec489944;
+    font-weight: 600;
+    letter-spacing: -1px;
+}
+.title {
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+.card ul {
+    list-style-type: disc;
+    padding-left: 1.25rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.card ul li {
+    margin-bottom: 0.35rem;
+    line-height: 1.5;
+}
+
+/* === 5. MEDIA QUERIES === */
+@media (max-width: 900px) {
+    .output-grid { column-count: 1; }
+    .history-masonry { grid-template-columns: 1fr; }
+}
+@media (max-width: 700px) {
+    .header-title { font-size: 1.32rem; }
+    header { padding: 0.9rem 1.1rem 0.9rem 0.5rem; }
+    .output-grid { max-width: 98vw; padding-left: 0.4rem; padding-right: 0.4rem; }
+    .card-sm-padding { padding: 1.1rem 0.6rem; }
+    .card { padding: 1.2rem 0.6rem; }
+    .title, .card-title { font-size: 1rem; }
+    .title { font-size: 1rem; }
+}
