@@ -127,15 +127,6 @@ nav {
     box-shadow: 0 8px 22px #007cff66, 0 2px 8px #ec4899;
     filter: brightness(1.08);
 }
-@media (max-width: 450px) {
-    .btn,
-    .btn-alt-bg {
-        font-size: 0.95rem;
-        padding: 0.38rem 0.7rem;
-        min-width: 90px;
-        min-height: 38px;
-    }
-}
 .card {
     position: relative;
     background: #181629;
@@ -315,4 +306,15 @@ nav {
     .card { padding: 1.2rem 0.6rem; }
     .title, .card-title { font-size: 1rem; }
     .title { font-size: 1rem; }
+}
+@media (max-width: 450px) {
+    .btn,
+    .btn-alt-bg {
+        font-size: 0.95rem;
+        padding: 0.38rem 0.7rem;
+        min-width: 90px;
+        min-height: 38px;
+        max-width: 120px;
+        white-space: nowrap;
+    }
 }
