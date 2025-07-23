@@ -98,7 +98,7 @@ export default function App() {
                 onShowHistory={() => setShowHistory(true)}
                 pitchHistory={history}
             />
-            <main className="flex flex-col items-center px-4 space-y-2 py-2 md:space-y-8 md:py-10">
+            <main className="flex flex-col items-center px-4 space-y-2 py-0 md:space-y-8 md:py-10">
                 {showHistory ? (
                     <>
                         <button className="btn mb-6" onClick={() => setShowHistory(false)}>
