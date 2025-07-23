@@ -69,7 +69,6 @@ export default function Header({ onShowHistory, pitchHistory = [] }) {
             <nav className="flex gap-2 items-center">
                 <button
                     className="btn btn-alt-bg"
-                    style={{ fontWeight: 600 }}
                     onClick={handleExportPDF}
                 >
                     Export PDF
