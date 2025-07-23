@@ -33,7 +33,7 @@ export default function Header({ onShowHistory, pitchHistory = [] }) {
 
     return (
         <header className="w-full max-w-5xl mx-auto flex justify-between items-center py-6 px-4">
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-0.5 md:gap-3">
                 <span className="header-logo-icon">
                     <svg width="36" height="36" viewBox="0 0 491.52 491.52" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <defs>
