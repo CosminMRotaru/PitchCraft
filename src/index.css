@@ -112,14 +112,29 @@ nav {
     cursor: pointer;
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .btn-alt-bg {
     background: linear-gradient(90deg,#6d4aff 0%,#ec4899 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .btn:hover,
 .btn-alt-bg:hover {
     box-shadow: 0 8px 22px #007cff66, 0 2px 8px #ec4899;
     filter: brightness(1.08);
+}
+@media (max-width: 450px) {
+    .btn,
+    .btn-alt-bg {
+        font-size: 0.95rem;
+        padding: 0.38rem 0.7rem;
+        min-width: 90px;
+        min-height: 38px;
+    }
 }
 .card {
     position: relative;
