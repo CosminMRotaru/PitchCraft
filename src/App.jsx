@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Form from "./components/Form";
 import PitchOutput from "./components/PitchOutput";
-import { generatePitch } from "./utils/api";
+import { generatePitch } from "./api/claude";
 
 export default function App() {
     const [pitch, setPitch] = useState(null);
