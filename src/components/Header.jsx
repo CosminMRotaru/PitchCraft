@@ -68,13 +68,13 @@ export default function Header({ onShowHistory, pitchHistory = [] }) {
             </div>
             <nav className="flex gap-2 items-center">
                 <button
-                    className="btn btn-alt-bg"
+                    className="btn btn-alt-bg header-btn"
                     onClick={handleExportPDF}
                 >
                     Export PDF
                 </button>
                 <button
-                    className="btn"
+                    className="btn header-btn"
                     onClick={onShowHistory}
                 >
                     History
