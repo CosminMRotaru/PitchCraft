@@ -1,2 +1,15 @@
 # Local Netlify folder
 .netlify
+
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Cache
+.vite/

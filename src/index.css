@@ -112,6 +112,10 @@ nav {
     cursor: pointer;
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
 }
 .btn-alt-bg {
     background: linear-gradient(90deg,#6d4aff 0%,#ec4899 100%);
@@ -300,4 +304,16 @@ nav {
     .card { padding: 1.2rem 0.6rem; }
     .title, .card-title { font-size: 1rem; }
     .title { font-size: 1rem; }
+    
+    /* Mobile button styling fixes */
+    .btn {
+        font-size: 0.85rem;
+        padding: 0.45rem 0.8rem;
+        font-weight: 500;
+    }
+    
+    /* Ensure navigation buttons fit properly */
+    nav {
+        gap: 0.4rem;
+    }
 }
