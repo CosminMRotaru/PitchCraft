@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
-import Header from './components/Header';
-import Hero from './components/Hero';
-import Form from './components/Form';
-import PitchOutput from './components/PitchOutput';
-import { generatePitch } from "./api/claude";
+import { useRef, useEffect, useState } from "react";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import Form from "./components/Form";
+import PitchOutput from "./components/PitchOutput";
+import { generatePitch } from "./utils/api";
 
 export default function App() {
     const [pitch, setPitch] = useState(null);
@@ -16,10 +16,18 @@ export default function App() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
 
+    const endOfOutputRef = useRef(null);
+
     useEffect(() => {
         const saved = JSON.parse(localStorage.getItem("pitchcraft-history") || "[]");
         setHistory(saved);
     }, []);
+
+    useEffect(() => {
+        if (pitch && endOfOutputRef.current) {
+            endOfOutputRef.current.scrollIntoView({ behavior: "smooth" });
+        }
+    }, [pitch]);
 
     const handlePitch = (newPitch) => {
         setPitch(newPitch);
@@ -124,7 +132,12 @@ export default function App() {
                             error={error}
                           />
                         </div>
-                        <PitchOutput pitch={pitch} />
+                        {pitch && (
+                            <>
+                              <PitchOutput pitch={pitch} />
+                              <div ref={endOfOutputRef} />
+                            </>
+                        )}
                     </>
                 )}
             </main>
