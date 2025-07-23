@@ -308,8 +308,7 @@ nav {
     .title { font-size: 1rem; }
 }
 @media (max-width: 450px) {
-    .btn,
-    .btn-alt-bg {
+      .header-btn {
         font-size: 0.95rem;
         padding: 0.38rem 0.7rem;
         min-width: 90px;
