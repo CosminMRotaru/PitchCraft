@@ -57,7 +57,7 @@ Return ONLY the JSON object, nothing else.
     let rawText = data.content[0].text;
     let jsonMatch = rawText.match(/\{[\s\S]*\}/);
     if (!jsonMatch) {
-      console.log("Claude nu a returnat niciun JSON valid. Raw:", rawText);
+      console.log("Claude did not return valid JSON. Raw:", rawText);
       return { statusCode: 500, body: "Claude did not return valid JSON" };
     }
 
@@ -82,3 +82,4 @@ Return ONLY the JSON object, nothing else.
   }
 
 };
+
