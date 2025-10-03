@@ -55,8 +55,6 @@ Return ONLY the JSON object, nothing else.
 
     const data = await response.json();
     let rawText = data.content[0].text;
-
-    // Extrage JSON-ul din răspuns (dacă mai bagă text aiurea)
     let jsonMatch = rawText.match(/\{[\s\S]*\}/);
     if (!jsonMatch) {
       console.log("Claude nu a returnat niciun JSON valid. Raw:", rawText);
@@ -82,4 +80,5 @@ Return ONLY the JSON object, nothing else.
       body: JSON.stringify({ error: error.message })
     };
   }
+
 };
